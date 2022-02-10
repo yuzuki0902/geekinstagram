@@ -1,0 +1,27 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.posts-container {
+    width: 50%;
+    margin: 10px auto;
+    
+}
+h2 {
+    width: 100px;
+    margin: 30px auto;
+    text-align: center;
+}
+.post {
+    border-top: solid #e6c5cf;
+    margin-top: 10px;
+    padding-top: 20px;
+}
+.main-box {
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.time {
+    display: flex;
+    justify-content: flex-end;
+}

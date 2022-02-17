@@ -24,7 +24,7 @@
         <br>
         <%= c.content %>
         </div>
-        <br>
+        <%=link_to "削除", post_path(c.id), method: :delete %>
     <% end %>
 
     <% if user_signed_in? %>

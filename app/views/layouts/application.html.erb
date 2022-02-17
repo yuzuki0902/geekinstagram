@@ -22,6 +22,9 @@
     <ul>
       <li><%= link_to "ホーム", posts_path %></li>
       <li><%= link_to "新規投稿",new_post_path %></li>
+      <% if user_signed_in? %>
+      <li><%= link_to "マイページへ", user_path(current_user.id) %>
+      <% end %>
     </ul>
     </div>
   </header>

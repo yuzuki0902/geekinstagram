@@ -1,5 +1,6 @@
 <h3>詳細</h3>
 <div class="post">
+    投稿者<p><%= @post.user.email %></p>
     <p><%= @post.body %></p>
     <p><%= @post.created_at %></p>
     <% if user_signed_in? %>
@@ -9,7 +10,7 @@
             <i class="fas fa-heart"></i><%= @post.likes.count %>
         <% end %>
     <% else %>
-        <%= link_to post_likes_path(@post), method: :post do %>
+        <%= link_to post_like_path(@post), method: :post do %>
             <i class="far fa-heart"></i><%= @post.likes.count %>
         <% end %>
     <% end %>
@@ -24,7 +25,7 @@
         <br>
         <%= c.content %>
         </div>
-        <%=link_to "削除", post_path(c.id), method: :delete %>
+        <%=button_to "削除", post_comment_path(c.post.id, c.id), method: :delete %>
     <% end %>
 
     <% if user_signed_in? %>

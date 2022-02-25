@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-        :recoverable, :rememberable, :trackable, :validatable
+        :recoverable, :rememberable, :validatable
   has_many :messages, dependent: :destroy
   has_many :entries, dependent: :destroy
   has_many :posts, dependent: :destroy
@@ -13,7 +13,6 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liked_posts, through: :likes, source: :post
   mount_uploader :image, ImageUploader
-  mount_uploader :avatar, AvatarUploader
   def already_liked?(post)
     self.likes.exists?(post_id: post.id)
   end
